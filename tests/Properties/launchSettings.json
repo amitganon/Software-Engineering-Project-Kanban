@@ -2,7 +2,7 @@
   "profiles": {
     "tests": {
       "commandName": "Project",
-      "workingDirectory": "D:\\Amit Ganon\\Software Engineering\\סמסטר ב\\מבוא להנדסת תוכנה\\עבודה 1\\milestone1-sBOB\\Backend\\bin\\Debug\\net5.0"
+      "workingDirectory": "D:\\Amit Ganon\\Software Engineering\\סמסטר ב\\מבוא להנדסת תוכנה\\עבודה 2\\milestone1-sBOB\\Backend\\bin\\Debug\\net5.0"
     }
   }
 }

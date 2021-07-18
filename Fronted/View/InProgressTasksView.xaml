@@ -1,0 +1,82 @@
+<Window x:Class="Fronted.View.InProgressTasksView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fronted.View"
+        mc:Ignorable="d"
+        Title="InProgressTasksView" ResizeMode="NoResize" Height="450" Width="800">
+    <Grid Margin="10">
+        <StackPanel Orientation="Vertical">
+            <Grid Height="430" Width="786">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="419.839"/>
+                    <ColumnDefinition Width="140.161"/>
+                    <ColumnDefinition Width="110"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="350"/>
+                </Grid.RowDefinitions>
+                <Label Content="{Binding Path = Title, Mode=OneTime}" Grid.ColumnSpan="2" Grid.Column="1" Foreground="PaleVioletRed"
+                       FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Width="300"
+                       RenderTransformOrigin="0.499,0.566" Margin="130,0,0,0" />
+                <Button Content="Home Page" x:Name="HomePage" Click="HomePage_Click" IsDefault="True"
+                        Margin="0,38,0,10" Width="110"/>
+                <Button Content="Log Out" x:Name="LogOut" Grid.Column="3" Click="LogOut_Click" FontSize="16" IsDefault="True"
+                        HorizontalAlignment="Left" Margin="0,37,0,11" Width="106"/>
+                <TextBlock Text="{Binding Path= UserName,  Mode=OneTime}" Grid.Column="3" HorizontalAlignment="Center"
+                           Margin="0,10,0,46" Width="110"/>
+                <Border BorderBrush='Gray' BorderThickness='3'  Name='border1' Margin="0,74,18,65" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
+                <ListView Grid.Row="1" HorizontalContentAlignment="Center" ItemsSource="{Binding Path=InProgressTasks}" Margin="10,0,18,65" SelectedItem="{Binding Path=SelectedTask, Mode=OneWayToSource}" 
+                          MouseDoubleClick="EnterTaskUpdate" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.ColumnSpan="4">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Background" Value="{Binding Path= BackgroungColor }" />
+                            <Setter Property="BorderBrush" Value="{Binding Path= BorderColor}" />
+                            <Setter Property="VerticalContentAlignment" Value="Top"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn                            
+                                DisplayMemberBinding="{Binding Path=Title, Mode=OneWay}"
+                                Header="Task Title" Width="180">
+                                <GridViewColumn.HeaderContainerStyle>
+                                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    </Style>
+                                </GridViewColumn.HeaderContainerStyle>
+                            </GridViewColumn>
+                            <GridViewColumn
+                                DisplayMemberBinding="{Binding Path=DueDate, Mode=OneWay}"
+                                 Width="180" >
+                                <GridViewColumn.HeaderContainerStyle >
+                                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+
+                                    </Style>
+                                </GridViewColumn.HeaderContainerStyle>
+                                <GridViewColumnHeader MouseDown="DueDateOrder" Content="Due date"></GridViewColumnHeader>
+                            </GridViewColumn>
+                            <GridViewColumn                             
+                                DisplayMemberBinding="{Binding Path=Description, Mode=OneWay}"
+                                Header="Description" Width="390">
+                                <GridViewColumn.HeaderContainerStyle>
+                                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    </Style>
+                                </GridViewColumn.HeaderContainerStyle>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label Content="Search" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Left" Width="50" Margin="230,285,0,35" RenderTransformOrigin="0.44,-0.199"/>
+                <TextBox Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" TextChanged="Search_By_Key_Word" Name="FilterText" Height="24" Margin="285,285,26,0" />
+                <Label Content="                                    " Grid.Column="1" HorizontalAlignment="Left" Margin="139,5,0,0" VerticalAlignment="Top" Height="13" Grid.Row="1" Width="71" MouseDown="DueDateOrder"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
