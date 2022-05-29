@@ -1,1 +1,4 @@
-318416575_314915513_314770629
+Language C#, WPF, SQL
+
+A full Kanban project with 3 tiers - presentation, business, Data access.
+In the presentation layer I used 'MVVM' Design Pattern
