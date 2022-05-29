@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConsoleApp1": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\tal93\\Desktop\\תואר ראשון\\תשפא\\סמסטר ב\\מבוא להנדסת תוכנה\\פרוייקט\\milestone1-sBOB\\Backend\\bin\\Debug\\net5.0"
+    }
+  }
+}
