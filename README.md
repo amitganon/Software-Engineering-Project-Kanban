@@ -1,14 +1,14 @@
 Language C#, WPF, SQL
 
 -------
-A full Kanban project with 3 tiers - presentation, business, Data access.
+A full Kanban project with 3 tiers - Presentation, Business, Data Access.
 
 Kanban is a project management methodology that allows for organizing and
 prioritizing projects and their tasks, using boards, lists, and cards. With the right
 Kanban board software, one can focus on priorities, keep the team in the loop about
 what’s current and what’s coming up, and control a steady flow of work, especially in
 output-heavy environments like production, agencies, support, and maintenance.
-This is a tool that supports agile development and helps to visualize and manage the workflow
+This is a tool that supports agile development and helps to visualize and manage workflow.
 
 -------
 Skills: In the presentation layer I used 'MVVM' Design Pattern
